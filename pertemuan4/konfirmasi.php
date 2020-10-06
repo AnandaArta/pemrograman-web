@@ -14,3 +14,18 @@
         echo "Mohon maaf belum dapat mendaftar";
     }
 ?>
+
+
+username : <?php echo $username ?>
+<br>
+password : <?php echo $password ?>
+<br>
+nama lengkap : <?php  echo $namadepan. " " .$namabelakang ?>
+<br>
+email    : <?php echo $email ?>
+
+<?php
+    
+
+
+?>
