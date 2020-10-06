@@ -1,31 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Konfirmasi Pendaftaran</title>
+</head>
+<body>
 <?php
-    if (isset($_POST['tombolkonfirmasi'])){
+    if (isset($_POST['tombolSubmit'])) {
         $username = $_POST['username'];
-        $password = $_POST['password'];
-        $namadepan = $_POST['namadepan'];
-        $namabelakang = $_POST['namabelakang'];
         $email = $_POST['email'];
-
-        echo "Nama Lengkap : ".$namadepan, " ".$namabelakang ;
-        echo "<br>Email : ".$email;
-        echo "<br>Username : ".$username;
-    }
-    else{
-        echo "Mohon maaf belum dapat mendaftar";
-    }
-?>
-
-
-username : <?php echo $username ?>
-<br>
-password : <?php echo $password ?>
-<br>
-nama lengkap : <?php  echo $namadepan. " " .$namabelakang ?>
-<br>
-email    : <?php echo $email ?>
-
-<?php
+        $namaDepan = $_POST['namaDepan'];
+        $namaBelakang = $_POST['namaBelakang'];
     
-
-
 ?>
+    username: <?php echo $username ?>
+    <br>
+    password: ******
+    <br>
+    nama lengkap: <?php echo $namaDepan." ".$namaBelakang ?>
+    <br>
+    email: <?php echo $email ?>
+<?php
+   }
+   else{
+    echo "Mohon maaf konfirmasi tidak bs diakses langsung";
+   }
+?>
+</body>
+</html>
