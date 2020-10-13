@@ -11,32 +11,33 @@
     include_once "koneksi.php";
 
     if (isset($_POST['tombolSubmit'])) {
-        $username = $_POST['username'];
-        $passwrod = $_POST['password'];
-        $email = $_POST['email'];
-        $namaDepan = $_POST['namaDepan'];
-        $namaBelakang = $_POST['namaBelakang'];
+        $kode = $_POST['kode'];
+        $nama = $_POST['nama'];
+        $kategori = $_POST['kategori'];
+        $sks = $_POST['sks'];
+        
 
-        $sql = "INSERT INTO registrasi (username, password, email, namaDepan, namaBelakang)
-        VALUES ('$username', '$password', '$email', '$namaDepan', '$namaBelakang')";
+        $sql = "INSERT INTO matakuliah (kode, nama, kategori, sks)
+        VALUES ('$kode', '$nama', '$kategori', '$sks')";
 
         if (mysqli_query($conn, $sql)) {
             echo "Data berhasil diinput";
         }
         else {
-            // echo "Data tidak berhasil diinput pada string sql: <br>
-            // $sql <br> , dg error: " .mysqli_error($conn);
-            echo "Data tidak berhasil diinput, dg error: " .mysqli_error($conn);
+            echo "Data tidak berhasil diinput pada string sql: <br>
+            $sql <br> , dg error: " .mysqli_error($conn);
+            // echo "Data tidak berhasil diinput, dg error: " .mysqli_error($conn);
         }
     
 ?>
-    username: <?php echo $username ?>
     <br>
-    password: ******
+    kode: <?php echo $kode ?>
     <br>
-    nama lengkap: <?php echo $namaDepan." ".$namaBelakang ?>
+    nama: <?php echo $nama ?>
     <br>
-    email: <?php echo $email ?>
+    kategori: <?php echo $kategori ?>
+    <br>
+    sks: <?php echo $sks ?>
 <?php
    }
    else{

@@ -11,29 +11,29 @@
 </head>
 <body>
 <div class="container">
-        <h2>Pendaftaran Anggota</h2>
+        <h2>Pilihan MataKuliah</h2>
         <form method="post" action="konfirmasi.php">
             <div class="form-group">
-                <label>Username</label>
-                <input class="form-control" type="text" name="username">
+                <label>Kode</label>
+                <input class="form-control" type="text" name="kode">
             </div>
             <div class="form-group">
-                <label>Password</label>
-                <input class="form-control" type="password" name="password">
+                <label>Nama</label>
+                <input class="form-control" type="text" name="nama">
             </div>
             <div class="form-group">
-                <label>Nama Depan</label>
-                <input class="form-control" type="text" name="namaDepan">
+                <label>Kategori</label>
+                <select class="form-control" type="text" name="kategori">
+                <option> MKMA </option>
+                <option> MKMI </option>
+                <option> MKPIL </option>
+                </select>
             </div>
             <div class="form-group">
-                <label>Nama Belakang</label>
-                <input class="form-control" type="text" name="namaBelakang">
+                <label>Sks</label>
+                <input class="form-control" type="text" name="sks">
             </div>
-            <div class="form-group">    
-                <label>email</label>
-                <input class="form-control" type="text" name="email">
-            </div>
-                <input class="btn btn-primary" type="submit" name="tombolSubmit" value="Daftar">
+                <input class="btn btn-primary" type="submit" name="tombolSubmit" value="Submit">
 
         </div>
     </form>
