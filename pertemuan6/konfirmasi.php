@@ -11,14 +11,14 @@
     include_once "koneksi.php";
 
     if (isset($_POST['tombolSubmit'])) {
-        $kode = $_POST['kode'];
-        $nama = $_POST['nama'];
+        $kodemk = $_POST['kodemk'];
+        $namamk = $_POST['namamk'];
         $kategori = $_POST['kategori'];
         $sks = $_POST['sks'];
         
 
-        $sql = "INSERT INTO matakuliah (kode, nama, kategori, sks)
-        VALUES ('$kode', '$nama', '$kategori', '$sks')";
+        $sql = "INSERT INTO matakuliah (kodemk, namamk, kategori, sks)
+        VALUES ('$kodemk', '$namamk', '$kategori', '$sks')";
 
         if (mysqli_query($conn, $sql)) {
             echo "Data berhasil diinput";
@@ -31,9 +31,9 @@
     
 ?>
     <br>
-    kode: <?php echo $kode ?>
+    kode: <?php echo $kodemk ?>
     <br>
-    nama: <?php echo $nama ?>
+    nama: <?php echo $namamk ?>
     <br>
     kategori: <?php echo $kategori ?>
     <br>

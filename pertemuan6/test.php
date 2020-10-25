@@ -11,17 +11,18 @@
 <body>
     <?php   
     include_once "header.php";
+    include_once "koneksi.php"; 
     $status = 2;  
-    if (isset($_POST['kodemk'])) {
-        include_once "koneksi.php"; 
-        $kodemk = $_POST['kodemk'];
-        $namamk = $_POST['namamk'];
+    if (isset($_POST['kode'])) {
+        
+        $kode = $_POST['kode'];
+        $nama = $_POST['nama'];
         $kategori = $_POST['kategori'];
         $sks = $_POST['sks']; 
 
          //buat koneksi
-         $strsql = "INSERT INTO matakuliah (kodemk, namamk, kategori, sks) 
-         VALUES ('$kodemk','$namamk','$kategori','$sks')";
+         $strsql = "INSERT INTO matakuliah (kode, nama, kategori, sks) 
+         VALUES ('$kode','$nama','$kategori','$sks')";
          
          $runSQL = mysqli_query($conn,$strsql);        
          if ($runSQL) {
@@ -30,7 +31,27 @@
          else {
              $status = 0; //tidak sukses;
          }       
-    }            
+    }        
+    else if (isset($_GET['kodemk'])) {
+        $_kodemk = $_GET['kodemk'];
+        $strSQL = "SELECT * FROM matakuliah WHERE kodemk='".$_kodemk."'";
+        $runStrSQL = mysqli_query($conn,$strSQL);
+        $jmlRowData = mysqli_num_rows($runStrSQL);
+        if ($jmlRowData > 0) {
+            while ($row = mysqli_fetch_assoc($runStrSQL)) {
+                $_namamk = $row["namamk"];
+                $_kategori = $row["kategori"];
+                $_sks = $row["sks"];
+            }
+        }
+    }  
+    else {
+        $jngiseng = "disabled";
+        $_namamk = "";
+        $_kategori = "";
+        $_sks = "";
+        $_kodemk = "";
+    }  
     ?>
     <div class="container">
         <h2>Pendaftaran Mata Kuliah versi 2 (dg Modal)</h2>   
@@ -98,15 +119,15 @@
         <form id="myform" method="post" action="registrasi_mk2.php">
             <div class="form-group">
                 <label>Kode Mata Kuliah</label>
-                <input id="kodemk" class="form-control" type="text" name="kodemk">
+                <input id="kodemk" class="form-control" type="text" name="kodemk" value="<?php echo $_kodemk ?>" readonly <?php echo $jngiseng ?>>
             </div>
             <div class="form-group">
                 <label>Nama Mata Kuliah</label>
-                <input id="namamk" class="form-control" type="text" name="namamk">
+                <input id="namamk" class="form-control" type="text" name="namamk" value="<?php echo $_namamk ?>" <?php echo $jngiseng ?>>
             </div>
             <div class="form-group">
                 <label>Kategori Mata Kuliah</label>
-                <select id="kategori" name="kategori" class="form-control">
+                <select id="kategori" name="kategori" class="form-control" <?php echo $jngiseng ?>>
                 <option value="pilih">Pilih</option>
                 <option value="MKMA">Mata Kuliah Major</option>
                 <option value="MKMI">Mata Kuliah Minor</option>
@@ -115,9 +136,9 @@
             </div>
             <div class="form-group">
                 <label>SKS</label>
-                <input id="sks" class="form-control" type="text" name="sks">
+                <input id="sks" class="form-control" type="text" name="sks" value="<?php echo $_sks ?>" <?php echo $jngiseng ?>>
             </div>           
-                <input class="btn btn-primary" type="button" id="tombol" value="Simpan">   
+                <input class="btn btn-primary" type="button" id="tombol" value="Simpan" <?php echo $jngiseng ?>>   
         </form>
         
     </div>
@@ -140,10 +161,10 @@
             const kategori = $('#kategori').val();
             const sks = $('#sks').val();
 
-            $('#kdmk').text(kodemk);
-            $('#nmmk').text(namamk);
-            $('#kat').text(kategori);
-            $('#sksmk').text(sks);
+            $('#kode').text(kode);
+            $('#nama').text(nama);
+            $('#kategori').text(kategori);
+            $('#sks').text(sks);
          
             //buka modal
             $('#pesan').modal({
@@ -152,7 +173,6 @@
         });
     });
     
-        
     </script>
 </body>
 </html>
