@@ -34,10 +34,11 @@
                 'name'=>$this->request->getVar('name'),
                 'email'=>$this->request->getVar('email'),
                 'contact_no'=>$this->request->getVar('contact_no'),
+                'password'=>password_hash($this->request->getVar('password'),PASSWORD_DEFAULT),
             ];
             $save=$model->insert($data);
 
-            return redirect()->to(base_url('admin/users/user'));
+            return redirect()->to(base_url('https://belajar-ci.test/admin/users/user'));
         }
         public function edit($id = null){
             $model = new UsersModel();
@@ -51,17 +52,18 @@
             $data=[
                 'name'=>$this->request->getVar('name'),
                 'email'=>$this->request->getVar('email'),
-                'contact_no'=>$this->request->getVar('contact_no')
+                'contact_no'=>$this->request->getVar('contact_no'),
+                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
             ];
             $save=$model->update($id,$data);
 
-            return redirect()->to(base_url('admin/users/user'));          
+            return redirect()->to(base_url('https://belajar-ci.test/admin/users/user'));          
         }
         public function delete($id = null){
             $model = new UsersModel();
             $data['user'] = $model->where('id',$id)->delete();
 
-            return redirect()->to(base_url('admin/users/user'));
+            return redirect()->to(base_url('https://belajar-ci.test/admin/users/user'));
         }
     }
 ?>

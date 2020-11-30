@@ -27,13 +27,13 @@
                     <li>
                         <a href="<?= base_url('https://belajar-ci.test/admin/users/index')?>">Home</a>
                     </li>   
-                    <li class="active">
+                    <li>
                         <a href="<?= base_url('https://belajar-ci.test/admin/users/user')?>">Master User</a>
                     </li>
                     <li>
                         <a href="<?= base_url('https://belajar-ci.test/admin/news/list')?>">Master Berita</a>
                     </li>
-                     <li>
+                     <li class="active">
                         <a href="<?= base_url('https://belajar-ci.test/admin/pages/halaman')?>">Master Halaman</a>
                     </li>
                 </ul>
@@ -56,10 +56,10 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?= base_url('https://belajar-ci.test/admin/users/index')?>">Home</a>
                                 </li>
-                                <li class="nav-item active">
+                                <li class="nav-item">
                                     <a class="nav-link" href="<?= base_url('https://belajar-ci.test/admin/users/user')?>">Master User</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a class="nav-link" href="<?= base_url('https://belajar-ci.test/admin/news/list')?>">Master Berita</a>
                                 </li>
                                 <li class="nav-item">
@@ -70,35 +70,33 @@
                     </div>
                 </nav>
                 <div class="container mt-5">
-                    <h2> List Users </h2>   
-                    <a href="<?= base_url('https://belajar-ci.test/admin/users/create')?>" class="btn btn-info mb-2">Add User</a>
+                    <h2> List Halaman </h2>   
+                    <a href="<?= base_url('https://belajar-ci.test/admin/pages/create')?>" class="btn btn-info mb-2">Add halaman</a>
                     <div class="row mt-3">
                         <div class="col-sm-12">
                             <table class="table table-striped" id="tableuser">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Nama</th>
-                                        <th>Email</th>
-                                        <th>No Contact</th>
-                                        <th>Password </th>
-                                        <th>Record data </th>
+                                        <th>Judul Halaman</th>
+                                        <th>Author </th>
+                                        <th>Isi Halaman</th>
+                                        <th>Tanggal Posting</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php if($users): ?>
-                                    <?php foreach ($users as $pengguna): ?>
+                                    <?php if($pages): ?>
+                                    <?php foreach ($pages as $pengguna): ?>
                                     <tr>
                                         <td><?= $pengguna['id']; ?></td>
-                                        <td><?= $pengguna['name']; ?></td>
-                                        <td><?= $pengguna['email']; ?></td>
-                                        <td><?= $pengguna['contact_no']; ?></td>
-                                        <td><?= $pengguna['password']; ?></td>
-                                        <td><?= $pengguna['created_at']; ?></td>
+                                        <td><?= $pengguna['judulhalaman']; ?></td>
+                                        <td><?= $pengguna['author']; ?></td>
+                                        <td><?= $pengguna['isihalaman']; ?></td>
+                                        <td><?= $pengguna['tglposting']; ?></td>
                                         <td>
-                                            <a href="<?= base_url('https://belajar-ci.test/admin/users/edit/'.$pengguna['id']);?>" class="btn btn-warning">Edit</a>
-                                            <a href="<?= base_url('https://belajar-ci.test/admin/users/delete/'.$pengguna['id']);?>" class="btn btn-danger">Delete</a>
+                                            <a href="<?= base_url('https://belajar-ci.test/admin/pages/edit/'.$pengguna['id']);?>" class="btn btn-warning">Edit</a>
+                                            <a href="<?= base_url('https://belajar-ci.test/admin/pages/delete/'.$pengguna['id']);?>" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                     <?php endforeach; ?>

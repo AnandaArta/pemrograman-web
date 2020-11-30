@@ -24,10 +24,16 @@
                 <ul class="list-unstyled components">
                     <p>Welcome</p>
                     <li>
-                        <a href="<?= base_url('admin/users/index')?>">Home</a>
+                        <a href="<?= base_url('https://belajar-ci.test/admin/users/index')?>">Home</a>
                     </li>
                     <li class="active">
-                        <a href="<?= base_url('admin/users/user')?>">List User</a>
+                        <a href="<?= base_url('https://belajar-ci.test/admin/users/user')?>">Master User</a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('https://belajar-ci.test/admin/news/list')?>">Master Berita</a>
+                    </li>
+                     <li>
+                        <a href="<?= base_url('https://belajar-ci.test/admin/pages/halaman')?>">Master Halaman</a>
                     </li>
                 </ul>
             </nav>
@@ -50,7 +56,7 @@
                     <div class="row">
                         <div class="col-sm-9">
                             <h3>Add User</h3>
-                            <form action="<?= base_url('admin/users/store'); ?>" method="POST">
+                            <form action="<?= base_url('https://belajar-ci.test/admin/users/store'); ?>" method="POST">
                                 <div class="form-grup">
                                     <label for="name">Nama</label>
                                     <br>
@@ -70,8 +76,14 @@
                                     <br>
                                 </div>
                                 <div class="form-grup">
+                                    <label for="email">Password</label>
+                                    <br>
+                                <input type="password" name="password" class="form-control" id="password" placeholder="Masukkan Password">
+                                <br>
+                            </div>
+                                <div class="form-grup">
                                     <button type="submit" id="send_form" class="btn btn-success">Submit</button>
-                                    <a href="<?= base_url('admin/users/user')?>" class="btn btn-danger">Close</a>
+                                    <a href="<?= base_url('https://belajar-ci.test/admin/users/user')?>" class="btn btn-danger">Close</a>
                                 </div>
                             </form>
                         </div>

@@ -19,21 +19,21 @@
             <!-- Sidebar Holder -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>Bootstrap Sidebar</h3>
+                 <h3>Portal Berita</h3>
                 </div>
                 <ul class="list-unstyled components">
                     <p>Welcome</p>
-                    <li>
+                   <li>
                         <a href="<?= base_url('https://belajar-ci.test/admin/users/index')?>">Home</a>
                     </li>
-                    <li class="active">
-                        <a href="<?= base_url('https://belajar-ci.test/admin/users/user')?>">Master user</a>
-                    </li>
                     <li>
-                        <a href="<?= base_url('https://belajar-ci.test/admin/news/list')?>">Master Berita</a>
+                        <a href="<?= base_url('https://belajar-ci.test/admin/users/user')?>">Master User</a>
+                    </li>
+                    <li class="active">
+                        <a href="<?= base_url('https://belajar-ci.test/admin/pages/halaman')?>">Master Halaman</a>
                     </li>
                      <li>
-                        <a href="<?= base_url('https://belajar-ci.test/admin/pages/halaman')?>">Master Halaman</a>
+                        <a href="<?= base_url('https://belajar-ci.test/admin/news/list')?>">Master Berita</a>
                     </li>
                 </ul>
             </nav>
@@ -55,40 +55,29 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-9">
-                            <h2>Edit Users</h2>
-                            <form action="<?= base_url('https://belajar-ci.test/admin/users/update'); ?>" method="POST">
-                                <input type="hidden" name="id" value="<?= $user['id'] ?>">
+                            <h3>Add Halaman</h3>
+                            <form action="<?= base_url('https://belajar-ci.test/admin/pages/store'); ?>" method="POST">
                                 <div class="form-grup">
-                                    <label for="name">Nama</label>
+                                    <label for="judul">Judul Halaman</label>
                                     <br>
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Masukkan Nama"
-                                    value="<?= $user['name'] ?>">
+                                    <input type="text" name="judulhalaman" class="form-control" id="judulhalaman" placeholder="Masukkan Judul Halaman">
                                     <br>
                                 </div>
                                 <div class="form-grup">
-                                    <label for="email">Email</label>
+                                    <label for="author">Author</label>
                                     <br>
-                                    <input type="text" name="email" class="form-control" id="email" placeholder="Masukkan Email"
-                                    value="<?= $user['email'] ?>">
-                                    <br>
-                                </div>
-                                 <div class="form-grup">
-                                    <label for="contact">Nomor Contact</label>
-                                    <br>
-                                    <input type="text" name="contact_no" class="form-control" id="contact_no" placeholder="Masukkan Nomor Contact"
-                                    value="<?= $user['contact_no'] ?>">
+                                    <input type="text" name="author" class="form-control" id="author" placeholder="Masukkan Author">
                                     <br>
                                 </div>
                                 <div class="form-grup">
-                                    <label for="contact">Password</label>
+                                    <label for="isi">Isi Halaman</label>
                                     <br>
-                                    <input type="text" name="password" class="form-control" id="password" placeholder="Masukkan Password"
-                                    value="<?= $user['password'] ?>">
+                                    <input type="text" name="isihalaman" class="form-control" id="isihalaman" placeholder="Masukkan Isi Halaman">
                                     <br>
                                 </div>
-                                <div class="form-grup">
+                                <div class="form-grup pt-4">
                                     <button type="submit" id="send_form" class="btn btn-success">Submit</button>
-                                    <a href="<?= base_url('https://belajar-ci.test/admin/users/user')?>" class="btn btn-danger">Close</a>
+                                    <a href="<?= base_url('https://belajar-ci.test/admin/pages/halaman')?>" class="btn btn-danger">Close</a>
                                 </div>
                             </form>
                         </div>

@@ -18,15 +18,21 @@
             <!-- Sidebar Holder -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>Bootstrap Animated Sidebar</h3>
+                    <h3>Bootstrap Sidebar</h3>
                 </div>
                 <ul class="list-unstyled components">
                     <p>Welcome</p>
                     <li class="active">
-                        <a href="<?= base_url('admin/users/index')?>">Home</a>
+                        <a href="<?= base_url('https://belajar-ci.test/admin/users/index')?>">Home</a>
                     </li>
                     <li>
-                        <a href="<?= base_url('admin/users/user')?>">List User</a>
+                        <a href="<?= base_url('https://belajar-ci.test/admin/users/user')?>">Master User</a>
+                    </li>
+                     <li>
+                        <a href="<?= base_url('https://belajar-ci.test/admin/news/list')?>">Master Berita</a>
+                    </li>
+                     <li>
+                        <a href="<?= base_url('https://belajar-ci.test/admin/pages/halaman')?>">Master Halaman</a>
                     </li>
                 </ul>
             </nav>
@@ -46,16 +52,16 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="#">Page</a>
+                                    <a class="nav-link" href="<?= base_url('https://belajar-ci.test/admin/users/index')?>">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Page</a>
+                                    <a class="nav-link" href="<?= base_url('https://belajar-ci.test/admin/users/user')?>">Master User</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Page</a>
+                                    <a class="nav-link" href="<?= base_url('https://belajar-ci.test/admin/news/list')?>">Master Berita</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Page</a>
+                                    <a class="nav-link" href="<?= base_url('https://belajar-ci.test/admin/login/logout')?>">Logout</a>
                                 </li>
                             </ul>
                         </div>
